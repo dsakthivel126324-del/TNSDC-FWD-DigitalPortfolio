@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sakthivelportfolio</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sakthivel | Portfolio</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: 'Poppins', sans-serif;
+
+            scroll-behavior: smooth;
+
+        }
+
+        body {
+
+            background: linear-gradient(120deg, #4e54c8, #8f94fb);
+
+            color: white;
+
+            line-height: 1.6;
+
+        }
+
+        header {
+
+            position: fixed;
+
+            width: 100%;
+
+            top: 0;
+
+            left: 0;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 15px 40px;
+
+            background: rgba(0, 0, 0, 0.3);
+
+            backdrop-filter: blur(8px);
+
+            z-index: 1000;
+
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+        }
+
+        header h1 {
+
+            font-size: 26px;
+
+            font-weight: bold;
+
+            background: linear-gradient(90deg, #ff6a00, #ee0979, #00f2fe);
+
+            -webkit-background-clip: text;
+
+            color: transparent;
+
+        }
+
+        nav ul {
+
+            display: flex;
+
+            list-style: none;
+
+        }
+
+        nav ul li {
+
+            margin: 0 15px;
+
+        }
+
+        nav ul li a {
+
+            color: #fff;
+
+            text-decoration: none;
+
+            font-weight: 500;
+
+            transition: 0.3s;
+
+        }
+
+        nav ul li a:hover {
+
+            color: #00f2fe;
+
+        }
+
+        section {
+
+            min-height: 100vh;
+
+            padding: 100px 60px 40px;
+
+        }
+
+        /* Home Section */
+
+        #home {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            animation: fadeIn 2s ease-in-out;
+
+        }
+
+        /* Profile Image Styling */
+
+        #home img {
+
+            width: 200px;
+
+            height: 200px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 6px solid #fff;
+
+            box-shadow: 0 0 25px #00f2fe, 0 0 45px #ff6a00;
+
+            margin-bottom: 20px;
+
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+        }
+
+        #home img:hover {
+
+            transform: scale(1.08);
+
+            box-shadow: 0 0 35px #ff6a00, 0 0 55px #00f2fe;
+
+        }
+
+        #home h2 {
+
+            font-size: 38px;
+
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+
+            -webkit-background-clip: text;
+
+            color: transparent;
+
+            margin-bottom: 15px;
+
+        }
+
+        #home p {
+
+            font-size: 20px;
+
+            color: #fff;
+
+            opacity: 0.9;
+
+        }
+
+        /* About Section */
+
+        #about {
+
+            background: rgba(255, 255, 255, 0.05);
+
+            border-radius: 10px;
+
+            padding: 30px;
+
+            animation: slideUp 2s ease-in-out;
+
+        }
+
+        #about h2 {
+
+            font-size: 28px;
+
+            margin-bottom: 15px;
+
+            color: #00f2fe;
+
+        }
+
+        #about p {
+
+            margin-bottom: 10px;
+
+            font-size: 18px;
+
+        }
+
+        /* Skills Section */
+
+        #skills {
+
+            text-align: center;
+
+        }
+
+        #skills h2 {
+
+            color: #ffdf00;
+
+            margin-bottom: 20px;
+
+        }
+
+        .skill-card {
+
+            background: rgba(255, 255, 255, 0.05);
+
+            border-radius: 10px;
+
+            padding: 20px;
+
+            margin: 15px;
+
+            display: inline-block;
+
+            width: 280px;
+
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+
+            transition: transform 0.3s;
+
+        }
+
+        .skill-card:hover {
+
+            transform: scale(1.05);
+
+        }
+
+        /* Project Section */
+
+        #projects {
+
+            text-align: center;
+
+        }
+
+        #projects h2 {
+
+            margin-bottom: 20px;
+
+            color: #ffdf00;
+
+        }
+
+        #projects a {
+
+            text-decoration: none;
+
+            color: #fff;
+
+            font-weight: bold;
+
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+
+            padding: 10px 20px;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+
+        }
+
+        #projects a:hover {
+
+            background: linear-gradient(90deg, #00f2fe, #4facfe);
+
+        }
+
+        /* Contact Section */
+
+        #contact {
+
+            text-align: center;
+
+            padding: 40px;
+
+        }
+
+        #contact h2 {
+
+            color: #00f2fe;
+
+            margin-bottom: 20px;
+
+        }
+
+        form {
+
+            max-width: 500px;
+
+            margin: auto;
+
+            background: rgba(255, 255, 255, 0.05);
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+        }
+
+        form input, form textarea {
+
+            width: 100%;
+
+            padding: 12px;
+
+            margin: 10px 0;
+
+            border: none;
+
+            border-radius: 6px;
+
+            outline: none;
+
+            font-size: 16px;
+
+        }
+
+        form button {
+
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+
+            color: white;
+
+            border: none;
+
+            padding: 12px 20px;
+
+            font-size: 16px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+        form button:hover {
+
+            background: linear-gradient(90deg, #00f2fe, #4facfe);
+
+        }
+
+        footer {
+
+            text-align: center;
+
+            padding: 15px;
+
+            margin-top: 30px;
+
+            background: rgba(0, 0, 0, 0.3);
+
+            backdrop-filter: blur(6px);
+
+        }
+
+        /* Animations */
+
+        @keyframes fadeIn {
+
+            from {opacity: 0;}
+
+            to {opacity: 1;}
+
+        }
+
+        @keyframes slideUp {
+
+            from {transform: translateY(50px); opacity: 0;}
+
+            to {transform: translateY(0); opacity: 1;}
+
+        }
+
+        /* Responsive */
+
+        @media (max-width: 768px) {
+
+            header {
+
+                flex-direction: column;
+
+            }
+
+            nav ul {
+
+                margin-top: 10px;
+
+            }
+
+            .skill-card {
+
+                width: 90%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Sakthivel's Portfolio</h1>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#about">About</a></li>
+
+                <li><a href="#skills">Skills</a></li>
+
+                <li><a href="#projects">Projects</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- Home Section -->
+
+    <section id="home">
+
+        <img src="sakthivel.jpg" alt="Sakthivel">
+
+        <h2>Hi, I'm Sakthivel 👋</h2>
+
+        <p>Welcome to my colorful and animated portfolio website!</p>
+
+    </section>
+
+    <!-- About Section -->
+
+    <section id="about">
+
+        <h2>About Me</h2>
+
+        <p><strong>Name:</strong> Sakthivel</p>
+
+        <p><strong>Department:</strong> B.Sc Computer Science</p>
+
+        <p><strong>College:</strong> Merit Haji Ismail Sahib Arts & Science College</p>
+
+        <p><strong>University:</strong> Thiruvalluvar University, Vellore</p>
+
+        <p><strong>Roll No:</strong> 36624U18021</p>
+
+        <p><strong>Naan Mudhalvan ID:</strong> A40BE7C75B256BE91C9415638E08452D</p>
+
+        <p><strong>Email:</strong> dsakthivel126324@gmail.com</p>
+
+    </section>
+
+    <!-- Skills Section -->
+
+    <section id="skills">
+
+        <h2>My Skills</h2>
+
+        <div class="skill-card"><h3>Python</h3><p>Experienced in Python programming, OOPs, data handling, and automation.</p></div>
+
+        <div class="skill-card"><h3>C++</h3><p>Proficient in C++ for solving DSA problems and building applications.</p></div>
+
+        <div class="skill-card"><h3>HTML</h3><p>Expert in HTML for creating stylish and responsive websites.</p></div>
+
+        <div class="skill-card"><h3>Data Structures</h3><p>Strong understanding of linked lists, stacks, queues, trees, and graphs.</p></div>
+
+        <div class="skill-card"><h3>Problem Solving</h3><p>Skilled in competitive coding, algorithm design, and optimization techniques.</p></div>
+
+    </section>
+
+    <!-- Project Section -->
+
+    <section id="projects">
+
+        <h2>My Projects</h2>
+
+        <a href="https://github.com/dsakthivel126324-del/TNSDC-FWD-DigitalPortfolio.git" target="_blank">View My GitHub Projects</a>
+
+    </section>
+
+    <!-- Contact Section -->
+
+    <section id="contact">
+
+        <h2>Contact Me</h2>
+
+        <form>
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+
+        </form>
+
+    </section>
+
+    <footer>
+
+        <p>© 2025 Sakthivel | All Rights Reserved</p>
+
+    </footer>
+
+</body>
+
+</html>
+<!-- partial -->
+  
+</body>
+</html>
